@@ -20,12 +20,12 @@ TARGET_SCREEN_WIDTH := 1080
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from bacon device
-$(call inherit-product, device/oneplus/bacon/bacon.mk)
+$(call inherit-product, device/oneplus/bacon/device.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/hazy/configs/nfc_enhanced.mk)
 
-# Inherit some common Hazy stuff.
+# Inherit some common CM stuff.
 $(call inherit-product, vendor/hazy/configs/common.mk)
 
 PRODUCT_NAME := hazy_bacon
@@ -46,6 +46,6 @@ TARGET_CONTINUOUS_SPLASH_ENABLED := true
 #ifneq ($(SIGN_BUILD),true)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oneplus/bacon/A0001:4.4.2/KVT49L/XNPH25R:user/release-keys PRIVATE_BUILD_DESC="bacon-user 4.4.2 KVT49L XNPH25R release-keys"
 #else
-## Signed bacon gets a special boot animation because it's special.
+# Signed bacon gets a special boot animation because it's special.
 #PRODUCT_BOOTANIMATION := device/oneplus/bacon/bootanimation.zip
 #endif
