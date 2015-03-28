@@ -17,6 +17,10 @@
 # overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay vendor/extra/overlays/phone-1080p
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
@@ -52,6 +56,9 @@ PRODUCT_COPY_FILES += \
 # System properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=9
+
+# Fuuuuu
+PRODUCT_PACKAGES += camera.bacon
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
