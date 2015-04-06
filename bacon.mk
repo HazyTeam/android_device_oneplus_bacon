@@ -17,10 +17,6 @@
 # overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay vendor/extra/overlays/phone-1080p
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
-
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
@@ -52,6 +48,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+
+# Recovery
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(LOCAL_PATH)/bacon
 
 # System properties
 PRODUCT_PROPERTY_OVERRIDES += \

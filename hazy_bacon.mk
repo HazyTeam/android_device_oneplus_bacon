@@ -18,10 +18,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from bacon device
 $(call inherit-product, device/oneplus/bacon/bacon.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/hazy/configs/nfc_enhanced.mk)
-
-# Inherit some common CM stuff.
+# Inherit some common stuff.
+$(call inherit-product, vendor/hazy/configs/common.mk)
 $(call inherit-product, vendor/hazy/configs/common_full_phone.mk)
 
 PRODUCT_NAME := hazy_bacon
@@ -36,7 +34,12 @@ TARGET_VENDOR_PRODUCT_NAME := bacon
 TARGET_VENDOR_DEVICE_NAME := A0001
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=A0001 PRODUCT_NAME=bacon
 
+TARGET_CONTINUOUS_SPLASH_ENABLED := true
+
 ## Use the latest approved GMS identifiers unless running a signed build
-ifneq ($(SIGN_BUILD),true)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oneplus/bacon/A0001:4.4.2/KVT49L/XNPH25R:user/release-keys PRIVATE_BUILD_DESC="bacon-user 4.4.2 KVT49L XNPH25R release-keys"
-endif
+
+# Copy device specific prebuilt files.
+PRODUCT_COPY_FILES += \
+    vendor/eos/prebuilt/common/bootanimations/BOOTANIMATION-1080x1920.zip:system/media/bootanimation.zip
+
