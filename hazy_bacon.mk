@@ -41,5 +41,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oneplus/bacon/A0001:4.4.2/KVT4
 
 # Copy device specific prebuilt files.
 PRODUCT_COPY_FILES += \
-    vendor/eos/prebuilt/common/bootanimations/BOOTANIMATION-1080x1920.zip:system/media/bootanimation.zip
+    vendor/hazy/prebuilt/common/bootanimations/1920x1080.zip:system/media/bootanimation.zip
 
