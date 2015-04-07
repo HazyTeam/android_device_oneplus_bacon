@@ -18,6 +18,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from bacon device
 $(call inherit-product, device/oneplus/bacon/bacon.mk)
 
+# Enhanced NFC
+$(call inherit-product, vendor/hazy/configs/nfc_enhanced.mk)
+
 # Inherit some common stuff.
 $(call inherit-product, vendor/hazy/configs/common.mk)
 $(call inherit-product, vendor/hazy/configs/common_full_phone.mk)
