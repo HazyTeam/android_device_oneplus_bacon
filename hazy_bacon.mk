@@ -21,8 +21,7 @@ $(call inherit-product, device/oneplus/bacon/bacon.mk)
 # Enhanced NFC
 $(call inherit-product, vendor/hazy/configs/nfc_enhanced.mk)
 
-# Inherit some common stuff.
-$(call inherit-product, vendor/hazy/configs/common.mk)
+# Inherit some common Hazy stuff.
 $(call inherit-product, vendor/hazy/configs/common_full_phone.mk)
 
 PRODUCT_NAME := hazy_bacon
@@ -33,16 +32,12 @@ PRODUCT_MODEL := A0001
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 PRODUCT_BRAND := oneplus
+TARGET_VENDOR := oneplus
 TARGET_VENDOR_PRODUCT_NAME := bacon
 TARGET_VENDOR_DEVICE_NAME := A0001
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=A0001 PRODUCT_NAME=bacon
 
-TARGET_CONTINUOUS_SPLASH_ENABLED := true
-
 ## Use the latest approved GMS identifiers unless running a signed build
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oneplus/bacon/A0001:4.4.2/KVT49L/XNPH25R:user/release-keys PRIVATE_BUILD_DESC="bacon-user 4.4.2 KVT49L XNPH25R release-keys"
-
-# Copy device specific prebuilt files.
-PRODUCT_COPY_FILES += \
-    vendor/hazy/prebuilt/common/bootanimations/1920x1080.zip:system/media/bootanimation.zip
-
+ifneq ($(SIGN_BUILD),true)
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oneplus/bacon/A0001:5.0.2/LRX22G/YNG1TAS0YL:user/release-keys PRIVATE_BUILD_DESC="bacon-user 5.0.2 LRX22G YNG1TAS0YL release-keys"
+endif
