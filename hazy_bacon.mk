@@ -19,10 +19,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/bacon/bacon.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/hazy/configs/nfc_enhanced.mk)
+$(call inherit-product, vendor/hazy/config/nfc_enhanced.mk)
 
 # Inherit some common Hazy stuff.
-$(call inherit-product, vendor/hazy/configs/common_full_phone.mk)
+$(call inherit-product, vendor/hazy/config/common_full_phone.mk)
 
 PRODUCT_NAME := hazy_bacon
 PRODUCT_DEVICE := bacon
@@ -40,6 +40,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=A0001 PRODUCT_NAME=bacon
 ## Use the latest approved GMS identifiers unless running a signed build
 ifneq ($(SIGN_BUILD),true)
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=oneplus/bacon/A0001:5.0.2/LRX22G/YNG1TAS2I3:user/release-keys \
-    PRIVATE_BUILD_DESC="bacon-user 5.0.2 LRX22G YNG1TAS2I3 release-keys"
+    BUILD_FINGERPRINT=oneplus/bacon/A0001:5.1.1/LMY48B/YOG4PAS1N0:user/release-keys \
+    PRIVATE_BUILD_DESC="bacon-user 5.1.1 LMY48B YOG4PAS1N0 release-keys"
 endif
